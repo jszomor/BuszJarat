@@ -79,6 +79,18 @@ namespace BuszJarat
             break;
           }
         }
+        for (int i = Counter-1; i > 1; i--)
+        {
+          if (megtettKm > 0)
+            megtettKm -= getEntries[i].Tavolsag;
+
+          else
+          {
+            Pozicio = i;
+            megMegy = false;
+            break;
+          }
+        }
       }
     }
   }
