@@ -10,7 +10,11 @@ namespace BuszJarat
   {
     static void Main(string[] args)
     {
-
+      string file = "21esBusz.txt";
+      BuszJarat buszJarat = new BuszJarat(file);
+      buszJarat.Print();
+      //buszJarat.TimeInterval();
+      Console.ReadKey();
     }
   }
 }
