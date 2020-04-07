@@ -27,6 +27,12 @@ namespace BuszJarat
       Console.WriteLine();
       Console.WriteLine("Megállók:");
       buszJarat.Print();
+      for (int i = 0; i < buszJarat.Counter; i++)
+      {
+        Console.WriteLine(buszJarat[i]);
+      }
+      Console.ReadKey();
+
       Console.ReadKey();
     }
   }

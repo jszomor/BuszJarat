@@ -38,6 +38,10 @@ namespace BuszJarat
         Counter++;
       }
     }
+    public string this[int i]
+    {
+      get { return getEntries[i].MegalloNeve; }
+    }
     public void Print()
     {
       Console.WriteLine();
