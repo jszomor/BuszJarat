@@ -42,16 +42,19 @@ namespace BuszJarat
     {
       get { return getEntries[i].MegalloNeve; }
     }
-    public void Print()
+    public void PrintMegallo()
     {
       Console.WriteLine();
+      Console.WriteLine($"A busz ezen megállók között tartozkodik: {getEntries[Pozicio - 1].MegalloNeve} - {getEntries[Pozicio].MegalloNeve}");
+    }
+    public void Print()
+    {
       Console.WriteLine("Sorszám   Buszmegálló     Távolság(Km)");
       for (int i = 1; i < Counter; i++)
       {
         Console.WriteLine("{0,3} {1,-20} {2,3}", getEntries[i].Id, getEntries[i].MegalloNeve, getEntries[i].Tavolsag);
       }
       Console.WriteLine();
-      Console.WriteLine($"A busz ezen megállók között tartozkodik: {getEntries[Pozicio-1].MegalloNeve} - {getEntries[Pozicio].MegalloNeve}");
     }
     public TimeSpan TimeInterval(string arrival)
     {
