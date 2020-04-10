@@ -97,5 +97,23 @@ namespace BuszJarat
         }
       }
     }
+    public DateTime BusStopTime(int sorszam, double sebesseg)
+    {
+      DateTime dateFromString = DateTime.Parse(startDate, System.Globalization.CultureInfo.InvariantCulture);
+      double uthossz = 0;
+      for (int i = 1; i < Counter; i++)
+      {
+        if(i <= sorszam)
+        {
+          uthossz += getEntries[i].Tavolsag;
+        }
+      }
+
+      double menetIdo;
+      menetIdo = uthossz / sebesseg * 60;
+      TimeSpan indulastolElteltIdo = TimeSpan.FromMinutes(menetIdo);
+      DateTime erkezesiIdopont = dateFromString + indulastolElteltIdo;
+      return erkezesiIdopont;
+    }
   }
 }

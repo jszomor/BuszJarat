@@ -25,13 +25,20 @@ namespace BuszJarat
       Console.WriteLine($"Megtett út kilóméterben: {(buszJarat.DistanceCalculator(menetido, sebesseg))/1000}km");
       buszJarat.BuszPozicio();
       Console.WriteLine();
+      Console.WriteLine("A most következő programrész a felhasználó által megadott megálló \n alapján kiszámolja hogy mikor lesz a legközelebb" +
+        "a busz abban a megállóban");
       Console.WriteLine("Megállók:");
       buszJarat.Print();
-      for (int i = 0; i < buszJarat.Counter; i++)
-      {
-        Console.WriteLine(buszJarat[i]);
-      }
-      Console.ReadKey();
+      Console.WriteLine("Kérem adja meg a megálló sorszámát.");
+      int sorszam = Convert.ToInt32(Console.ReadLine());
+      DateTime erkezesiIDo = buszJarat.BusStopTime(sorszam, sebesseg);
+      Console.WriteLine($"{buszJarat[sorszam]} nevű megállóban legközelebb a busz ekkor lesz: {erkezesiIDo}");
+
+      //for (int i = 0; i < buszJarat.Counter; i++)
+      //{
+      //  Console.WriteLine(buszJarat[i]);
+      //}
+      //Console.ReadKey();
 
       Console.ReadKey();
     }
